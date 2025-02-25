@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bean Bounce</title>
     <style>
         body {
@@ -11,47 +11,29 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            height: 100vh;
             overflow: hidden;
         }
         canvas {
             border: 1px solid black;
-            max-width: 100vw;
-            max-height: 100vh;
-            width: 100%;
-            height: auto;
         }
         #startButton {
             position: absolute;
-            top: 60%; /* Position below intro text */
+            top: 60%; /* Moved down to 60% of the canvas height */
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 30%; /* Scale to 30% of viewport width for responsiveness */
-            max-width: 300px; /* Cap max width for larger screens */
-            height: auto; /* Maintain aspect ratio */
+            padding: 10px 20px;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 18px;
             cursor: pointer;
-            z-index: 10; /* Ensure button is above canvas */
-            border: none;
-            padding: 0;
-            background: none;
-        }
-        #startButton img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain; /* Preserve aspect ratio and fit within bounds */
-        }
-        @media (max-width: 600px) {
-            #startButton {
-                width: 50%; /* Larger relative size on mobile for better touch targeting */
-                max-width: 200px; /* Cap max width on smaller screens */
-            }
+            display: block; /* Ensure button is visible initially */
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <canvas id="gameCanvas"></canvas>
-    <button id="startButton"><img src="startgame898x375.png" alt="Start Game"></button>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <button id="startButton">Start Game</button>
     <script src="game.js"></script>
 </body>
 </html>
